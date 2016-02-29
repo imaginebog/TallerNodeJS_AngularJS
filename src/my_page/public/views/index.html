@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script src="js/lib/angular.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="js/controllers/core.js"></script>
+	</head>
+	<body ng-app="my_angular_app">
+		<div ng-controller="home_controller">
+			<h1>{{title}}</h1>	
+			<input type="text" ng_model="newTask"/>
+			<button type="button" ng_click="addTask()">Agregar</button>
+			<hr></hr>
+			<ul ng-repeat="t in taskList">
+				<li><input type="checkbox" ng-model="t.done" ng-change="taskStatusChanged(t)"/>{{t.task}}</li>
+			</ul>
+		</div>
+	</body>
+</html>
+
+<!-- <html>
+	<head>
+		
+	</head>
+	<body>
+		Hola Mundo!
+	</body>
+</html> -->
